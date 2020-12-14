@@ -39,6 +39,7 @@ export default {
 				if(this.LoginData.username=='admin'&&this.LoginData.password=='123'){
 					this.$router.push({name:'home'})
 					this.$message.success('登录成功');
+					localStorage.setItem('token','token123456');
 				}else{
 					this.$message.error('登录失败');
 				}

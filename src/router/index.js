@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/components/login/login.vue'
 import Home from '@/components/home/home.vue'
+import User from '@/components/user/users.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,7 +14,15 @@ const routes = [
   {
     name:'home',
     path: '/home',
-    component:Home
+    component:Home,
+    // 开启在home组件中开启子组件
+    children:[
+      {
+        name:'users',
+        path:'/users',
+        component:User
+      }
+    ]
   }
 ]
 
